@@ -27,7 +27,10 @@
 ├─ SISD                             # The ALVEARE State-Of-Art communication protocol
    └─ files                         # HLS core.cpp and tb
    └─ SISD.xpr.zip                  # The SISD implementation
-└─ ASH_Paper                        # Project documentation 
+├─ ASH_OHW_paper                    # Project documentation 
+├─ ASH_OHW_PWP                      # A power point presentation of the project
+├─ README.md                        # github README file
+└─ README.txt                       # txt version of the README
 
 </pre>
 
@@ -38,7 +41,7 @@
 
 <pre>
    
-#STEP 1
+#STEP 1 --> Vitis HLS 2023.2
    
 - Open VITIS HLS 2023.2
 - Create a new HLS project
@@ -58,7 +61,7 @@
 - Select as display format Vivado, type as display name ALU_sys_HDL and click OK
 
    
-#STEP 2
+#STEP 2 --> Vivado 2023.2
    
 - Unzip export folder created in the previous step, you will find the same folder already implemented in the 'files' folder, named 'HLS_generated'
 - Open the 'ALU_sys_HDL_file' folder and copy all the files, you can find it in the 'files' folder
@@ -83,5 +86,48 @@
 - Insert the files in your Pynq folder to import Overlays
 - Open Jupiter notebook, paste the Python code following the cell order
 - Run the programm
+
+# STEP 3 --> Jupyter Environment
    
+-- First Step
+   
+   Select the bitstream that has to be run: there are 4 different bitstreams that can be run.
+   It is possible to choose the ASH bitstream under the label:
+   
+# --------------------------------------- ALU_sys PL ------------------------------------------------ #
+
+   Cancel the # from the bitstream that has to be tested.
+   Use just one bitstream, the other ones must be commented on. 
+
+- Second Step
+
+	Select the right value for the burst at the beginning of the program depending on the bitstream used.
+	The value of the burst size can be only 50, 100, 200, or 400.
+
+	i.e. burst_size          = 400
+
+	It MUST NOT be changed during the run of the program. 
+	It can be changed only when a kernel restart is made. 
+
+-- Third Step
+	
+	selec must be equal to 0 or 2 the first time the program runs.
+
+	i.e. selec=2
+	
+	Transactions must be an integer number bigger than 0 
+
+	ie: transactions =1
+
+	press the button to restart the kernel and re-run the notebook.
+	See the results at the end of the notebook.
+   
+--Fourth Step
+
+	Now selec value can change, the value can be 0, 1, 2 or Others.
+	Now transaction can change.
+	Run the second and the third cell of the Python
+	See the results
+
+	The fourth step can be repeated multiple times
 </pre>
