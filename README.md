@@ -27,7 +27,10 @@
 ├─ SISD                             # The ALVEARE State-Of-Art communication protocol
    └─ files                         # HLS core.cpp and tb
    └─ SISD.xpr.zip                  # The SISD implementation
-└─ ASH_Paper                        # Project documentation 
+├─ ASH_OHW_paper                    # Project documentation 
+├─ ASH_OHW_PWP                      # A power point presentation of the project
+├─ README.md                        # github README file
+└─ README.txt                       # txt version of the README
 
 </pre>
 
